@@ -2,9 +2,11 @@
   "name": "drop-down-menu",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/Mattwwilson34/drop-down-menu/issues"
   },
-  "homepage": "https://github.com/Mattwwilson34/drop-down-menu#readme"
+  "homepage": "https://github.com/Mattwwilson34/drop-down-menu#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
 }
