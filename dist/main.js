@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: blue;\n}\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,sBAAsB;AACxB","sourcesContent":["body {\n  background-color: blue;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "*,\n*:before,\n*:after {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100vh;\n}\n\n.menu {\n  height: 50px;\n  width: 100px;\n  display: inline-flex;\n  flex-direction: column;\n  background-color: black;\n  color: white;\n  transition: height 0.5s;\n  text-align: center;\n  gap: 10px;\n  padding-top: 14px;\n}\n\n.menu:hover {\n  cursor: pointer;\n}\n\n.menu-btn {\n  background-color: black;\n  border: none;\n  outline: none;\n  color: white;\n  cursor: pointer;\n}\n\n.menu-item {\n  display: none;\n}\n\n.menu-item a {\n  color: white;\n  text-decoration: none;\n}\n\n.menu .visible {\n  display: inline-block;\n}\n", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;;;EAGE,sBAAsB;AACxB;;AAEA;;EAEE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,oBAAoB;EACpB,sBAAsB;EACtB,uBAAuB;EACvB,YAAY;EACZ,uBAAuB;EACvB,kBAAkB;EAClB,SAAS;EACT,iBAAiB;AACnB;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,uBAAuB;EACvB,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,eAAe;AACjB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,qBAAqB;AACvB;;AAEA;EACE,qBAAqB;AACvB","sourcesContent":["*,\n*:before,\n*:after {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100vh;\n}\n\n.menu {\n  height: 50px;\n  width: 100px;\n  display: inline-flex;\n  flex-direction: column;\n  background-color: black;\n  color: white;\n  transition: height 0.5s;\n  text-align: center;\n  gap: 10px;\n  padding-top: 14px;\n}\n\n.menu:hover {\n  cursor: pointer;\n}\n\n.menu-btn {\n  background-color: black;\n  border: none;\n  outline: none;\n  color: white;\n  cursor: pointer;\n}\n\n.menu-item {\n  display: none;\n}\n\n.menu-item a {\n  color: white;\n  text-decoration: none;\n}\n\n.menu .visible {\n  display: inline-block;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -607,6 +607,43 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 
+
+const MenuDropDowns = {
+  menus: document.querySelectorAll('.menu'),
+  menuItems: document.querySelectorAll('.menu-item'),
+
+  init() {
+    this.setEvents();
+  },
+
+  setEvents() {
+    this.menus.forEach((menu) => {
+      menu.addEventListener('mouseenter', this.openMenu);
+      menu.addEventListener('mouseleave', this.closeMenu);
+    });
+  },
+
+  openMenu(e) {
+    const menu = e.target;
+    const menuItems = menu.querySelectorAll('.menu-item');
+    menuItems.forEach((item) => {
+      item.classList.toggle('visible');
+    });
+    // sets height based on what is required to fit all elements in dropdown + 20px to give addition space at bottom
+    menu.style.height = `${menu.scrollHeight + 20}px`;
+  },
+
+  closeMenu(e) {
+    const menu = e.target;
+    const menuItems = e.target.querySelectorAll('.menu-item');
+    menuItems.forEach((item) => {
+      item.classList.toggle('visible');
+    });
+    menu.style.height = '50px';
+  },
+};
+
+MenuDropDowns.init();
 
 })();
 

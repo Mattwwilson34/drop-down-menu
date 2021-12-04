@@ -1,3 +1,48 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background-color: blue;
+  height: 100vh;
+}
+
+.menu {
+  height: 50px;
+  width: 100px;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  transition: height 0.5s;
+  text-align: center;
+  gap: 10px;
+  padding-top: 14px;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.menu-btn {
+  background-color: black;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-item {
+  display: none;
+}
+
+.menu-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu .visible {
+  display: inline-block;
 }
