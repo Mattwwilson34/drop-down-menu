@@ -21,6 +21,9 @@
   "homepage": "https://github.com/Mattwwilson34/drop-down-menu#readme",
   "devDependencies": {
     "css-loader": "^6.5.1",
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
     "style-loader": "^3.3.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"

@@ -21,7 +21,7 @@ const MenuDropDowns = {
     menuItems.forEach((item) => {
       item.classList.toggle('visible');
     });
-    // sets height based on what is required to fit all elements in dropdown + 20px to give addition space at bottom
+    // height based required height to fit dropdown els + 20px for bottom spacing
     menu.style.height = `${menu.scrollHeight + 20}px`;
   },
 
